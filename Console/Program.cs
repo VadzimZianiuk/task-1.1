@@ -1,5 +1,5 @@
-﻿using System;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 
 namespace Task1._1
 {
@@ -12,9 +12,13 @@ namespace Task1._1
                 .Build();
 
             string name = config["name"];
-            Console.WriteLine(string.IsNullOrEmpty(name)
-                ? $"Please, use commandline -name 'Your name'."
-                : $"Hello, {name}!");
+            if (string.IsNullOrEmpty(name))
+            {
+                Console.WriteLine("Write your name, please:");
+                name = Console.ReadLine();
+            }
+
+            Console.WriteLine($"Hello, {name}!");
         }
     }
 }
