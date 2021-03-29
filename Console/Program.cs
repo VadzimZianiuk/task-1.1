@@ -19,6 +19,7 @@ namespace Task1._1
             }
 
             Console.WriteLine($"Hello, {name}!");
+            Console.ReadKey();
         }
     }
 }
